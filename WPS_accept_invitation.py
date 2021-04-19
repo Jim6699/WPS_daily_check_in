@@ -32,13 +32,13 @@ def request_re(sid, invite_userid, rep = 30):
 
 for i in invite_userids:
     for j in sids:
-    try:
-    r = request_re(j, i)
-    js = json.loads(r.content)
-    if js['result'] == 'ok':
-    mk += 1
-    except:
-    print('发生未知错误')
+        try:
+            r = request_re(j, i)
+            js = json.loads(r.content)
+            if js['result'] == 'ok':
+            mk += 1
+        except:
+            print('发生未知错误')
                
 
 SERVER_KEY = os.getenv('SERVER_KEY')
